@@ -5,3 +5,41 @@ body{
     font-family: 'Roboto Slab', serif;
     color: white;
 }
+
+#hello-friend{
+    text-align: center;
+}   
+
+#game-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#choice-buttons-container{
+    display: flex;
+    gap: 10px;
+}
+
+.choice-button{
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    font-family: 'Roboto Slab', serif;
+    padding-inline: 10px;
+    padding-block: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.choice-button:hover{
+    cursor: pointer;
+}
+
+
+#pc-choice-container{
+    display: flex;
+    gap: 10px;
+}
