@@ -20,7 +20,10 @@ body{
 
 #choice-buttons-container{
     display: flex;
+    justify-content: center;
     gap: 10px;
+    transition: justify-content 900ms ease-in-out;
+
 }
 
 .choice-button{
@@ -31,6 +34,7 @@ body{
     padding-inline: 10px;
     padding-block: 5px;
     cursor: pointer;
+    border-radius: 5px;
     font-size: 1.2rem;
 }
 
@@ -38,6 +42,20 @@ body{
     cursor: pointer;
 }
 
+.increaseSize{
+    transform: scale(1.5);
+    transition: ease-in-out 900ms;
+}
+
+.disappear{
+    opacity: 0;
+    transition: opacity 900ms ease-in-out;
+}
+
+.center{
+    justify-content: center;
+    transition: justify-content 950ms ease-in
+}
 
 #pc-choice-container{
     display: flex;
