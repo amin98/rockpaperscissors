@@ -1,63 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
-body{
+body {
     background-color: black;
-    font-family: 'Roboto Slab', serif;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
 }
 
-#hello-friend{
-    text-align: center;
-}   
-
-#game-container{
+main {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
 }
 
-#choice-buttons-container{
+#icons-container {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    transition: justify-content 900ms ease-in-out;
-
+    position: relative;
+    height: 200px;
 }
 
-.choice-button{
-    background-color: #ffffff;
-    color: #000;
+.choice-button {
+    background: none;
     border: none;
-    font-family: 'Roboto Slab', serif;
-    padding-inline: 10px;
-    padding-block: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    padding: 0;
+    transition: transform 200ms ease-out, opacity 200ms ease-out;
 }
 
-.choice-button:hover{
+.choice-button:hover {
     cursor: pointer;
 }
 
-.increaseSize{
-    transform: scale(1.5);
-    transition: ease-in-out 900ms;
-}
-
-.disappear{
-    opacity: 0;
-    transition: opacity 900ms ease-in-out;
-}
-
-.center{
-    justify-content: center;
-    transition: justify-content 950ms ease-in
-}
-
-#pc-choice-container{
+.button-image {
+    width: 30vw;
+    height: auto;
+    max-width: 120px;
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    pointer-events: none;
 }
+
+[data-choice="paper"] {
+    transform: translateY(100px);
+}
+
+[data-choice="rock"],
+[data-choice="scissors"] {
+    transform: translateX(0);
+}
+
+.disappear {
+    opacity: 0;
+}
+
+.increase-size {
+    transform: scale(1.2);
+}
+
+.increase-image-size{
+    transform: scale(1.5);
+}
+
+#computer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 1.4rem;
+}
+
+#computer-choice-image {
+    width: 20vw;
+    height: auto;
+    max-width: 120px;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    transition: transform 200ms ease-out;
+}
+

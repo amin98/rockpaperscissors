@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Rock, Paper, Scissors</title>
-</head>
-<body>
+  </head>
+  <body>
+    <main>
+        <h1 id="computer-choice-status">Opponent</h1>
+      <div id="computer-container">
+        <img
+          id="computer-choice-image"
+          src="assets/opponent.png"
+          alt="Computer Icon Choice"
+        />
 
-    <h1 id="hello-friend">Hello, friend</h1>
-    <div id="game-container">
-        <div id="pc-choice-container">
-            <h2 id="pc-choice">PC choice: </h2>
-            <h2 id="pc-choice-text"></h2>
-        </div>
-
-        <div id="choice-buttons-container">
-            <button value="1" class="choice-button" id="rock">Rock</button>
-            <button value="2" class="choice-button" id="paper">Paper</button>
-            <button value="3" class="choice-button" id="scissors">Scissors</button>
-        </div>
-    </div>
+      </div>
+      <div id="icons-container">
+        <button data-choice="rock" class="choice-button">
+          <img class="button-image" src="assets/white/rock.png" alt="Rock" />
+        </button>
+        <button data-choice="paper" class="choice-button">
+          <img class="button-image" src="assets/white/paper.png" alt="Paper" />
+        </button>
+        <button data-choice="scissors" class="choice-button">
+          <img
+            class="button-image"
+            src="assets/white/scissors.png"
+            alt="Scissors"
+          />
+        </button>
+      </div>
+      <h1 id="result-status"></h1>
+    </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

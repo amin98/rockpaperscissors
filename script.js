@@ -1,5 +1,18 @@
 const choices = ["rock", "paper", "scissors"];
 const choiceButton = document.querySelectorAll(".choice-button");
+const buttonImage = document.querySelectorAll(".button-image");
+const result = document.getElementById("result-status");
+
+
+const transformations = {
+  paper: "translateY(0px)",
+  rock: "translateX(100px)",
+  scissors: "translateX(-100px)",
+};
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 
 const winsAgainst = {
@@ -13,34 +26,44 @@ function getcomputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+  // let computerChoiceStatus = document.getElementById("computer-choice-status");
+  let computerChoiceImage = document.getElementById("computer-choice-image");
+  computerChoiceImage.src = `./assets/loader.gif`;
+  
   console.log("You chose:", humanChoice);
 
   setTimeout(() => {
+
     console.log("PC chose:", computerChoice);
-  }, 1000);
+    // computerChoiceStatus.textContent = `${capitalizeFirstLetter(computerChoice)}`;
+    computerChoiceImage.src = `./assets/black/${computerChoice}.png`;
+    computerChoiceImage.classList.add('increase-size');
+  }, 1650);
 
   setTimeout(() => {
     if (humanChoice === computerChoice) {
       console.log("It's a tie!");
+      result.textContent = `It's a tie!`;
+
     } else if (winsAgainst[humanChoice] === computerChoice) {
       console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+      result.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+
     } else {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+      result.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
     }
-  }, 2000);
+  }, 2500);
 }
 
 choiceButton.forEach((button) => {
   button.addEventListener("click", () => {
-    const humanChoice = choices[parseInt(button.value) - 1];
-    button.classList.add("increaseSize");
-
+    const humanChoice = button.dataset.choice;
+    button.style.transform = transformations[button.dataset.choice] || "";
+    
     choiceButton.forEach((btn) => {
       if (btn !== button) {
         btn.classList.add('disappear');
-        setTimeout(() => {
-          btn.remove();
-        }, 900);
       }
     });
 
