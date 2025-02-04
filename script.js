@@ -26,7 +26,7 @@ function getcomputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-  // let computerChoiceStatus = document.getElementById("computer-choice-status");
+  let computerChoiceStatus = document.getElementById("computer-choice-status");
   let computerChoiceImage = document.getElementById("computer-choice-image");
   computerChoiceImage.src = `./assets/loader.gif`;
   
@@ -43,15 +43,15 @@ function playRound(humanChoice, computerChoice) {
   setTimeout(() => {
     if (humanChoice === computerChoice) {
       console.log("It's a tie!");
-      result.textContent = `It's a tie!`;
+      computerChoiceStatus.textContent = `It's a tie!`;
 
     } else if (winsAgainst[humanChoice] === computerChoice) {
       console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-      result.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+      computerChoiceStatus.textContent = `You win! ${capitalizeFirstLetter(humanChoice)} beats ${capitalizeFirstLetter(computerChoice)}`;
 
     } else {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-      result.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+      computerChoiceStatus.textContent = `You lose! ${capitalizeFirstLetter(computerChoice)} beats ${capitalizeFirstLetter(humanChoice)}`;
     }
   }, 2500);
 }

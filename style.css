@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100svh;
     margin: 0;
     font-family: 'Roboto Slab', serif;
 }
@@ -16,6 +16,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 
 #icons-container {
